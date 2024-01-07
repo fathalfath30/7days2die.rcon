@@ -1,0 +1,10 @@
+### NodeJS
+node_modules
+yarn.lock
+
+### Jetbrains or any other IDE
+.idea
+
+### Project
+dist
+src/config.js
