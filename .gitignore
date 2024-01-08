@@ -7,4 +7,4 @@ yarn.lock
 
 ### Project
 dist
-src/config.js
+server/config.ts
