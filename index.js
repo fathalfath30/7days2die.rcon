@@ -14,22 +14,21 @@
 //  Gitlab : https://gitlab.com/Fathalfath30
 //
 */
-import Server from "./server/index.js";
 import fs from 'fs';
+import logger from './core/logger.js';
+
+// initialize config
+let config = {};
 
 (async () => {
   // initializing all service
-  let config = process.argv[2] || './config.js'
-  await fs.access(config, (err) => {
-    if (err){
-      console.log(err)
+  let log = logger('index.js');
+  log.info('initialize configuration ...')
+  let configPath = (process.argv[2] || './config.jsonx');
+  await fs.access(configPath, (err) => {
+    if (err) {
+      log.error(`failed to find file : ${configPath} please validate your config path`);
+      process.exit(0);
     }
-  })
-
-})()
-.then(() => {
-  console.log("done")
-})
-.catch((e) => {
-  console.log("exception: " + e.message)
-})
+  });
+})();

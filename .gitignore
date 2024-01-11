@@ -8,3 +8,5 @@ yarn.lock
 ### Project
 dist
 server/config.ts
+logs/**/*.log
+logs/**/*.json

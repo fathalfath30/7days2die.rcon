@@ -21,6 +21,10 @@ export default class Server extends EventEmitter {
     super();
   }
 
+  async loadPlugins() {
+    // todo: load plugin from config.json
+  }
+
   async start() {
     // todo: start server
   }
